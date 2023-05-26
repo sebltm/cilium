@@ -22,10 +22,15 @@
 # define TC_ACT_REDIRECT	7
 #endif
 
+#ifndef TC_ACT_RECLASSIFY
+# define TC_ACT_RECLASSIFY	1
+#endif
+
 #define CTX_ACT_OK		TC_ACT_OK
 #define CTX_ACT_DROP		TC_ACT_SHOT
 #define CTX_ACT_TX		TC_ACT_REDIRECT
 #define CTX_ACT_REDIRECT	TC_ACT_REDIRECT
+#define CTX_ACT_RECLASSIFY TC_ACT_RECLASSIFY
 
 /* Discouraged since prologue will unclone full skb. */
 #define CTX_DIRECT_WRITE_OK	0

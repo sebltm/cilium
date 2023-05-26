@@ -516,7 +516,7 @@ handle_ipv4(struct __ctx_buff *ctx, __u32 secctx,
 			 * return to stack immediately here with
 			 * TC_ACT_REDIRECT.
 			 */
-			if (ret < 0 || ret == TC_ACT_REDIRECT)
+			if (ret < 0 || ret == TC_ACT_REDIRECT || ret == TC_ACT_RECLASSIFY)
 				return ret;
 		}
 		/* Verifier workaround: modified ctx access. */

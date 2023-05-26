@@ -1924,6 +1924,8 @@ static __always_inline int nodeport_lb4(struct __ctx_buff *ctx,
 			goto skip_service_lookup;
 		else if (ret == DROP_UNKNOWN_L4)
 			return CTX_ACT_OK;
+		else if (ret == DROP_FRAG_NOT_FOUND)
+			return CTX_ACT_RECLASSIFY;
 		else
 			return ret;
 	}
